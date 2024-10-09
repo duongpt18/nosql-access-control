@@ -69,6 +69,7 @@ db.employees.find({});
 Update MongoDB documents to include access control policies: 
 We will modify the collection to include an `accessPolicy` field, so we can simulate field-level security for `salary`.
 ```
+use companyDB;
 db.employees.updateMany({}, [
   {
     $set: {
@@ -81,6 +82,7 @@ db.employees.updateMany({}, [
     }
   }
 ]);
+db.employees.find({});
 ```
 Application-Level Access Control
 Here, the Python script will check the role of the user and filter the fields accordingly.
