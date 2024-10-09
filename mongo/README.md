@@ -20,9 +20,12 @@ services:
       - "27017:27017"
     command: --auth
 ```
-Connect to MongoDB (from the container):
+Spin up the database
 ```
 docker compose up -d
+```
+Connect to MongoDB (from the container):
+```
 docker exec -it mongodb mongosh -u admin -p password --authenticationDatabase admin
 ```
 Create Sample Data
